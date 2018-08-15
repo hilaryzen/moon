@@ -10,4 +10,12 @@ class ApplicationController < Sinatra::Base
   get '/' do
     return erb :index
   end
+  
+  post '/survey' do
+    return erb :survey
+  end
+  
+  post '/result' do
+    return erb :result
+  end
 end
