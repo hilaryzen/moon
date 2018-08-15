@@ -5,6 +5,8 @@
   </head>
   <body>
     <form method="POST" action="/result">
+      <h2>Flow</h2>
+      <p>Please describe your flow!</p>
       <select name="flow">
         <option value="spotty">Spotty</option>
         <option value="light">Light</option>
@@ -12,6 +14,24 @@
         <option value="Heavy">Heavy</option>
         <option value="Flood Warning">Flood Warning</option>
       </select>
+      <h2>Pain from Down Under</h2>
+      <p>How bad are the cramps this month?</p>
+      <select name="cramps">
+        <option value="zero">0</option>
+        <option value="one">1</option>
+        <option value="two">2</option>
+        <option value="three">3</option>
+        <option value="four">4</option>
+        <option value="five">5</option>
+        <option value="six">6</option>
+      </select>
+      <h2>Other Physical Problems</h2>
+      <p>Please check all problems that you experience:</p><br>
+      <input type="checkbox" name="physical1" value="headache">Headaches<br>
+      <input type="checkbox" name="physical2" value="fatigue">Fatigue<br>
+      <input type="checkbox" name="physical3" value="tender-breasts">Tender breasts<br>
+      <input type="checkbox" name="physical4" value="leg-aches">Leg aches<br>
+      <input type="checkbox" name="physical5" value="back-aches">Back aches<br>
       <input type="submit">
     </form>
   </body>
