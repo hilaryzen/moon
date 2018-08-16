@@ -8,5 +8,15 @@
     <h2>Flow</h2>
     <% flow_advice = {'spotty' => 'advice for spotty','light' => 'advice for light', 'medium' => 'advice for medium', 'heavy' => 'advice for heavy', 'flood-warning' => 'advice for flood warning'} %>
     <p><%= flow_advice[params[:flow]] %></p>
+    
+    <h2>Cramps</h2>
+    <% cramps_advice = {'zero' => 'advice for 0', 'one' => 'advice for 1'} %>
+    <p><%= cramps_advice[params[:cramps]] %></p>
+    
+    <h2>Other Physical Maladies</h2>
+    <% physical_advice = {'headache' => 'advice for headache', 'fatigue' => 'advice for fatigue'} %> 
+    <% if physical1 == 'headache' %>
+    <p><%= physical_advice['headache'] %></p>
+    <% end %>
   </body>
 </html>
