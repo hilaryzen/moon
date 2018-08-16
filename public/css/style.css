@@ -13,10 +13,14 @@ h1 {
   font-size: 100px;
   letter-spacing: 5px;
 }
-
+div {
+  margin: auto;
+  width: 50%;
+}
 h3, p {
   color: #FFF;
-  font-family: 'Bad Script', cursive;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 3px;
 }
 
 input[type="text"] {
