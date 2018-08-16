@@ -39,3 +39,10 @@ div {
   width: 1000px;
   margin: auto;
 }
+#status {
+  border-style: dashed;
+  border-color: #FFF;
+}
+#status h2 {
+  font-size: 25px;
+}

@@ -7,6 +7,31 @@
   </head>
   <body>
     <h1>Thanks for finishing the survey! Here are your results!</h1>
+    <div id="status">
+      <h2>Flow: <%= params[:flow] %></h2>
+      <h2>Cramp level: <%= params[:cramps] %></h2>
+      <h2>Skin: <%= params[:skin] %></h2>
+      <h2>Appetite: <%= params[:appetite] %></h2>
+      <h2>Craving: 
+          <% if params[:craving1]=="sweet" %>
+          sweet
+          <% elsif params[:craving2]=="mild-sweet" %>
+          mild-sweet
+          <% elsif params[:craving3]=="salty" %>
+          salty
+          <% elsif params[:craving4]=="mild-salty" %>
+          mild-salty
+          <% elsif params[:craving5]=="dairy" %>
+          dairy
+          <% elsif params[:craving6]=="meat" %>
+          meat
+          <% elsif params[:craving7]=="veggies-fruits" %>
+          veggies and fruits
+          <% else %>
+          none
+          <% end %>
+      </h2>
+    </div>
     <h2>Flow</h2>
     <% flow_advice = {
       'spotty' => "If your period recently became spotty, there may be many reasons. Medication and low body weight can affect it and make it more irregular or spotty. Too little or too much progesterone, one of the hormones that your body produces, will also have the same effect. Talk to your doctor to see if this is a potential problem.", 
@@ -75,12 +100,12 @@
     <div><p><%= skin_advice[params[:skin]] %></p></div>
     
     <h3>Acne</h3>
-    <% ance_advice = {
+    <% acne_advice = {
       'u-zone' => 'advice for u-zone',
       't-zone' => "advice for t-zone",
-      'chest-arms' => "advice for chest-arms"
+      'chest-arms' => "advice for chest-arms",
       'back' => "advice for back"
-    }
+    } %>
     <% checked = false %>
     <% if params[:acne1] == 'u-zone' %>
     <% checked = true %>
@@ -102,6 +127,8 @@
     <h3>Acne on Your Back?</h3>
     <div><p><%= acne_advice['back'] %></p></div>
     <% end %>
+    <% if checked == false %>
+    <div><p>Your skin is totally clear!</p></div>
     
     <h2>Digestion</h2>
     <% digestion_advice = {
