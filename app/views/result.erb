@@ -15,7 +15,7 @@
     
     <h2>Other Physical Maladies</h2>
     <% physical_advice = {'headache' => 'advice for headache', 'fatigue' => 'advice for fatigue'} %> 
-    <% if physical1 == 'headache' %>
+    <% if params[:physical1] == 'headache' %>
     <p><%= physical_advice['headache'] %></p>
     <% end %>
   </body>
