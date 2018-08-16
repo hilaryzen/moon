@@ -14,9 +14,36 @@
     <p><%= cramps_advice[params[:cramps]] %></p>
     
     <h2>Other Physical Maladies</h2>
-    <% physical_advice = {'headache' => 'advice for headache', 'fatigue' => 'advice for fatigue'} %> 
+    <% physical_advice = {'headache' => 'advice for headache', 'fatigue' => 'advice for fatigue', 'tender-breasts' => 'advice for tender breasts', 'muscle-aches' => 'advice for muscle aches', 'nothing' => 'advice for nothing'} %> 
+    <% checked = false %>
     <% if params[:physical1] == 'headache' %>
+    <% checked = true %>
+    <h3>For Headaches</h3>
     <p><%= physical_advice['headache'] %></p>
     <% end %>
+    <% if params[:physical2] == 'fatigue' %>
+    <% checked = true %>
+    <h3>For Fatigue</h3>
+    <p><%= physical_advice['fatigue'] %></p>
+    <% end %>
+    <% if params[:physical3] == 'tender-breasts' %>
+    <% checked = true %>
+    <h3>For Tender Breasts</h3>
+    <p><%= physical_advice['tender-breasts'] %></p>
+    <% end %>
+    <% if params[:physical4] == 'muscle-aches' %>
+    <% checked = true %>
+    <h3>For Muscle Aches</h3>
+    <p><%= physical_advice['muscle-aches'] %></p>
+    <% end %>
+    <% if checked == false %>
+    <p>You have no problems!</p>
+    <% end %>
+    
+    <h2>Skin</h2>
+    <% skin_advice = {'oily' => 'advice for oily', 'dry' => 'advice for dry', 'normal' => 'advice for normal'} %>
+    <h3>For <%= params[:skin].capitalize %> Skin</h3>
+    <p><%= skin_advice[params[:skin]] %></p>
+
   </body>
 </html>
