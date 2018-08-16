@@ -8,7 +8,7 @@
   <body>
     <h1>Thanks for finishing the survey! Here are your results!</h1>
     <h2>Flow</h2>
-    <% flow_advice = {'spotty' => 'advice for spotty','light' => 'advice for light', 'medium' => 'advice for medium', 'heavy' => 'advice for heavy', 'flood-warning' => 'advice for flood warning'} %>
+    <% flow_advice = {'spotty' => 'advice for spotty','light' => 'Congrats! You got lucky!', 'medium' => 'advice for medium', 'heavy' => 'advice for heavy', 'flood-warning' => 'advice for flood warning'} %>
     <p><%= flow_advice[params[:flow]] %></p>
     
     <h2>Cramps</h2>
@@ -69,6 +69,57 @@
     <% checked = true %>
     <h3>For Diarrhea</h3>
     <p><%= digestion_advice['diarrhea'] %></p>
+    <% end %>
+    <% if params[:digestion5] == 'gaseous' %>
+    <% checked = true %>
+    <h3>For Gas</h3>
+    <p><%= digestion_advice['gaseous'] %></p>
+    <% end %>
+    <% if checked == false %>
+    <p>You have no problems!</p>
+    <% end %>
+    
+    <% appetite_advice = {'poor' => 'advice for poor', 'good' => 'advice for good', 'increased' => 'advice for increased', 'insatiable' => 'advice for insatiable'} %>
+    <h3>For Your <%= params[:appetite].capitalize %> Appetite</h3>
+    <p><%= appetite_advice[params[:appetite]] %></p>
+    
+    <h3>For Cravings</h3>
+    <% cravings_advice = {'sweets' => 'advice for sweets', 'mild-sweet' => 'advice for mild-sweet', 'salty' => 'advice for salty', 'mild-salty' => 'advice for mild-salty', 'dairy' => 'advice for dairy', 'meat' => 'advice for meat', 'veggies-fruits' => 'advice for veggies-fruits'} %> 
+    <% checked = false %>
+    <% if params[:craving1] == 'sweets' %>
+    <% checked = true %>
+    <h4>Craving Sweets?</h4>
+    <p><%= cravings_advice['sweets'] %></p>
+    <% end %>
+    <% if params[:craving2] == 'mild-sweet' %>
+    <% checked = true %>
+    <h4>Craving Mildly Sweet?</h4>
+    <p><%= cravings_advice['mild-sweet'] %></p>
+    <% end %>
+    <% if params[:craving3] == 'salty' %>
+    <% checked = true %>
+    <h4>Craving Salty?</h4>
+    <p><%= cravings_advice['salty'] %></p>
+    <% end %>
+    <% if params[:craving4] == 'mild-salty' %>
+    <% checked = true %>
+    <h4>Craving Mildly Salty?</h4>
+    <p><%= cravings_advice['mild-salty'] %></p>
+    <% end %>
+    <% if params[:craving5] == 'dairy' %>
+    <% checked = true %>
+    <h4>Craving Dairy?</h4>
+    <p><%= cravings_advice['dairy'] %></p>
+    <% end %>
+    <% if params[:craving6] == 'meat' %>
+    <% checked = true %>
+    <h4>Craving Meat?</h4>
+    <p><%= cravings_advice['meat'] %></p>
+    <% end %>
+    <% if params[:craving7] == 'veggies-fruits' %>
+    <% checked = true %>
+    <h4>Craving Veggies and Fruits?</h4>
+    <p><%= cravings_advice['veggies-fruits'] %></p>
     <% end %>
     <% if checked == false %>
     <p>You have no problems!</p>
