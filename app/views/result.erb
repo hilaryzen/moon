@@ -12,50 +12,60 @@
       <h2>Cramp level: <%= params[:cramps] %></h2>
       <h2>Skin: <%= params[:skin] %></h2>
       <h2>Digestion: 
-          <% problems = [] %>
+          <% digestion_problems = [] %>
           <% if params[:digestion1]=="bloating" %>
-          <% problems.push('bloated') %>
+          <% digestion_problems.push('bloated') %>
           <% end %>
           <% if params[:digestion2]=="nausea-vomiting" %>
-          <% problems.push("nausea and vomiting") %>
+          <% digestion_problems.push("nausea and vomiting") %>
           <% end %>
           <% if params[:digestion3]=="constipation" %>
-          <% problems.push("constipated") %>
+          <% digestion_problems.push("constipated") %>
           <% end %>
           <% if params[:digestion4]=="diarrhea" %>
-          <% problems.push("diarrhea") %>
+          <% digestion_problems.push("diarrhea") %>
           <% end %>
           <% if params[:digestion5]=="gaseous" %>
-          <% problems.push("gassy") %>
+          <% digestion_problems.push("gassy") %>
           <% end %>
-          <% if problems == [] %>
+          <% if digestion_problems == [] %>
           no issues
           <% else %>
-          <ul>
-            <% problems.each do |problem| %>
-              <li><%= problem %></li>
+            <% digestion_problems.each do |problem| %>
+              <h2><%= problem %></h2>
             <% end %>
-          </ul>
           <% end %>
       </h2>
       <h2>Appetite: <%= params[:appetite] %></h2>
       <h2>Craving: 
-          <% if params[:craving1]=="sweet" %>
-          sweet
-          <% elsif params[:craving2]=="mild-sweet" %>
-          mild-sweet
-          <% elsif params[:craving3]=="salty" %>
-          salty
-          <% elsif params[:craving4]=="mild-salty" %>
-          mild-salty
-          <% elsif params[:craving5]=="dairy" %>
-          dairy
-          <% elsif params[:craving6]=="meat" %>
-          meat
-          <% elsif params[:craving7]=="veggies-fruits" %>
-          veggies and fruits
+          <% craving_problems = [] %>
+          <% if params[:craving1]=="sweets" %>
+          <% craving_problems.push("sweets") %>
+          <% end %>
+          <% if params[:craving2]=="mild-sweet" %>
+          <% craving_problems.push("mildly sweet") %>
+          <% end %>
+          <% if params[:craving3]=="salty" %>
+          <% craving_problems.push("salty") %>
+          <% end %>
+          <% if params[:craving4]=="mild-salty" %>
+          <% craving_problems.push("mildly salty") %>
+          <% end %>
+          <% if params[:craving5]=="dairy" %>
+          <% craving_problems.push("dairy") %>
+          <% end %>
+          <% if params[:craving6]=="meat" %>
+          <% craving_problems.push("meat") %>
+          <% end %>
+          <% if params[:craving7]=="veggies-fruits" %>
+          <% craving_problems.push("veggies and fruits") %>
+          <% end %>
+          <% if craving_problems == [] %>
+          no issues
           <% else %>
-          none
+            <% craving_problems.each do |problem| %>
+              <h2><%= problem %></h2>
+            <% end %>
           <% end %>
       </h2>
     </div>
