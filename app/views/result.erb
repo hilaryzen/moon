@@ -8,12 +8,24 @@
   <body>
     <h1>Thanks for finishing the survey! Here are your results!</h1>
     <h2>Flow</h2>
-    <% flow_advice = {'spotty' => 'advice for spotty','light' => 'Congrats! You got lucky!', 'medium' => 'advice for medium', 'heavy' => 'advice for heavy', 'flood-warning' => 'advice for flood warning'} %>
-    <p><%= flow_advice[params[:flow]] %></p>
+    <% flow_advice = {
+      'spotty' => "If your period recently became spotty, there may be many reasons. Medication and low body weight can affect it and make it more irregular or spotty. Too little or too much progesterone, one of the hormones that your body produces, will also have the same effect. Talk to your doctor to see if this is a potential problem.", 
+      'light' => "Congrats! You got lucky!", 
+      'medium' => "Not bad! Your flow is a bother, but not that much!", 
+      'heavy' => "Sometimes the start of a new cycle is so celebratory that it acts like a gift that just keeps on giving. And giving. And giving. Heavy to flood-warning periods can feel like a huge burden, but Luna’s got some ways for you that could help lighten the load.
+      \r\nKind of like a one-size-fits-all hat, taking hormonal, birth control and getting an IUD could cover multiple period symptoms, regardless of whether they are being used for sexual activity or not. Talk to your doctor if these are good fits for you.
+      \nVitamin to the Rescue: Vitamin A. According the Bustle, studies show that incorporating Vitamin A can decrease menstrual flow. If not the supplement itself, you can get your fill through carrots, sweet potato, squash, and pumpkin (think: orange veggies!).
+      \nFor students, ever notice that periods in the summer are just more pleasant than any other time in the year? Maybe that’s just Luna, but reducing stress makes a huge difference in your cycle. Worry and tension can cause a buildup in the uterine lining, according to WebMD. Yoga, meditation, light exercise, and keeping in check with your mental health can make a real difference.", 
+      'flood-warning' => "Sometimes the start of a new cycle is so celebratory that it acts like a gift that just keeps on giving. And giving. And giving. Heavy to flood-warning periods can feel like a huge burden, but Luna’s got some ways for you that could help lighten the load. (Please note, if your flow isn’t figuratively but almost quite literally “Flood-warning,” you may need to consult a doctor immediately.)
+      \nKind of like a one-size-fits-all hat, taking hormonal, birth control and getting an IUD could cover multiple period symptoms, regardless of whether they are being used for sexual activity or not. Talk to your doctor if these are good fits for you.
+      \nVitamin to the Rescue: Vitamin A. According the Bustle, studies show that incorporating Vitamin A can decrease menstrual flow. If not the supplement itself, you can get your fill through carrots, sweet potato, squash, and pumpkin (think: orange veggies!).
+      \nFor students, ever notice that periods in the summer are just more pleasant than any other time in the year? Maybe that’s just Luna, but reducing stress makes a huge difference in your cycle. Worry and tension can cause a buildup in the uterine lining, according to WebMD. Yoga, meditation, light exercise, and keeping in check with your mental health can make a real difference."
+    } %>
+    <div><p><%= flow_advice[params[:flow]] %></p></div>
     
     <h2>Cramps</h2>
     <% cramps_advice = {'zero' => 'advice for 0', 'one' => 'advice for 1'} %>
-    <p><%= cramps_advice[params[:cramps]] %></p>
+    <div><p><%= cramps_advice[params[:cramps]] %></p></div>
     
     <h2>Other Physical Maladies</h2>
     <% physical_advice = {'headache' => 'advice for headache', 'fatigue' => 'advice for fatigue', 'tender-breasts' => 'advice for tender breasts', 'muscle-aches' => 'advice for muscle aches', 'nothing' => 'advice for nothing'} %> 
@@ -21,31 +33,31 @@
     <% if params[:physical1] == 'headache' %>
     <% checked = true %>
     <h3>For Headaches</h3>
-    <p><%= physical_advice['headache'] %></p>
+    <div><p><%= physical_advice['headache'] %></p></div>
     <% end %>
     <% if params[:physical2] == 'fatigue' %>
     <% checked = true %>
     <h3>For Fatigue</h3>
-    <p><%= physical_advice['fatigue'] %></p>
+    <div><p><%= physical_advice['fatigue'] %></p></div>
     <% end %>
     <% if params[:physical3] == 'tender-breasts' %>
     <% checked = true %>
     <h3>For Tender Breasts</h3>
-    <p><%= physical_advice['tender-breasts'] %></p>
+    <div><p><%= physical_advice['tender-breasts'] %></p></div>
     <% end %>
     <% if params[:physical4] == 'muscle-aches' %>
     <% checked = true %>
     <h3>For Muscle Aches</h3>
-    <p><%= physical_advice['muscle-aches'] %></p>
+    <div><p><%= physical_advice['muscle-aches'] %></p></div>
     <% end %>
     <% if checked == false %>
-    <p>You have no problems!</p>
+    <div><p>It seems like you're good here!</p></div>
     <% end %>
     
     <h2>Skin</h2>
     <% skin_advice = {'oily' => 'advice for oily', 'dry' => 'advice for dry', 'normal' => 'advice for normal'} %>
     <h3>For <%= params[:skin].capitalize %> Skin</h3>
-    <p><%= skin_advice[params[:skin]] %></p>
+    <div><p><%= skin_advice[params[:skin]] %></p></div>
     
     <h2>Digestion</h2>
     <% digestion_advice = {'bloating' => 'advice for bloating', 'nausea-vomiting' => 'advice for nausea-vomiting', 'constipation' => 'advice for constipation', 'diarrhea' => 'advice for diarrhea', 'gaseous' => 'advice for gaseous'} %>
@@ -53,35 +65,35 @@
     <% if params[:digestion1] == 'bloating' %>
     <% checked = true %>
     <h3>For Bloating</h3>
-    <p><%= digestion_advice['bloating'] %></p>
+    <div><p><%= digestion_advice['bloating'] %></p></div>
     <% end %>
     <% if params[:digestion2] == 'nausea-vomiting' %>
     <% checked = true %>
     <h3>For Nausea Or Vomiting</h3>
-    <p><%= digestion_advice['nausea-vomiting'] %></p>
+    <div><p><%= digestion_advice['nausea-vomiting'] %></p></div>
     <% end %>
     <% if params[:digestion3] == 'constipation' %>
     <% checked = true %>
     <h3>For Constipation</h3>
-    <p><%= digestion_advice['constipation'] %></p>
+    <div><p><%= digestion_advice['constipation'] %></p></div>
     <% end %>
     <% if params[:digestion4] == 'diarrhea' %>
     <% checked = true %>
     <h3>For Diarrhea</h3>
-    <p><%= digestion_advice['diarrhea'] %></p>
+    <div><p><%= digestion_advice['diarrhea'] %></p></div>
     <% end %>
     <% if params[:digestion5] == 'gaseous' %>
     <% checked = true %>
     <h3>For Gas</h3>
-    <p><%= digestion_advice['gaseous'] %></p>
+    <div><p><%= digestion_advice['gaseous'] %></p></div>
     <% end %>
     <% if checked == false %>
-    <p>You have no problems!</p>
+    <div><p>You have no problems!</p></div>
     <% end %>
     
     <% appetite_advice = {'poor' => 'advice for poor', 'good' => 'advice for good', 'increased' => 'advice for increased', 'insatiable' => 'advice for insatiable'} %>
     <h3>For Your <%= params[:appetite].capitalize %> Appetite</h3>
-    <p><%= appetite_advice[params[:appetite]] %></p>
+    <div><p><%= appetite_advice[params[:appetite]] %></p></div>
     
     <h3>For Cravings</h3>
     <% cravings_advice = {'sweets' => 'advice for sweets', 'mild-sweet' => 'advice for mild-sweet', 'salty' => 'advice for salty', 'mild-salty' => 'advice for mild-salty', 'dairy' => 'advice for dairy', 'meat' => 'advice for meat', 'veggies-fruits' => 'advice for veggies-fruits'} %> 
@@ -89,40 +101,40 @@
     <% if params[:craving1] == 'sweets' %>
     <% checked = true %>
     <h4>Craving Sweets?</h4>
-    <p><%= cravings_advice['sweets'] %></p>
+    <div><p><%= cravings_advice['sweets'] %></p></div>
     <% end %>
     <% if params[:craving2] == 'mild-sweet' %>
     <% checked = true %>
     <h4>Craving Mildly Sweet?</h4>
-    <p><%= cravings_advice['mild-sweet'] %></p>
+    <div><p><%= cravings_advice['mild-sweet'] %></p></div>
     <% end %>
     <% if params[:craving3] == 'salty' %>
     <% checked = true %>
     <h4>Craving Salty?</h4>
-    <p><%= cravings_advice['salty'] %></p>
+    <div><p><%= cravings_advice['salty'] %></p></div>
     <% end %>
     <% if params[:craving4] == 'mild-salty' %>
     <% checked = true %>
     <h4>Craving Mildly Salty?</h4>
-    <p><%= cravings_advice['mild-salty'] %></p>
+    <div><p><%= cravings_advice['mild-salty'] %></p></div>
     <% end %>
     <% if params[:craving5] == 'dairy' %>
     <% checked = true %>
     <h4>Craving Dairy?</h4>
-    <p><%= cravings_advice['dairy'] %></p>
+    <div><p><%= cravings_advice['dairy'] %></p></div>
     <% end %>
     <% if params[:craving6] == 'meat' %>
     <% checked = true %>
     <h4>Craving Meat?</h4>
-    <p><%= cravings_advice['meat'] %></p>
+    <div><p><%= cravings_advice['meat'] %></p></div>
     <% end %>
     <% if params[:craving7] == 'veggies-fruits' %>
     <% checked = true %>
     <h4>Craving Veggies and Fruits?</h4>
-    <p><%= cravings_advice['veggies-fruits'] %></p>
+    <div><p><%= cravings_advice['veggies-fruits'] %></p></div>
     <% end %>
     <% if checked == false %>
-    <p>You have no problems!</p>
+    <div><p>You have no problems!</p></div>
     <% end %>
   </body>
 </html>
