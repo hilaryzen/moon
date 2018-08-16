@@ -12,18 +12,30 @@
       <h2>Cramp level: <%= params[:cramps] %></h2>
       <h2>Skin: <%= params[:skin] %></h2>
       <h2>Digestion: 
+          <% problems = [] %>
           <% if params[:digestion1]=="bloating" %>
-          bloated
-          <% elsif params[:digestion2]=="nausea-vomiting" %>
-          nausea and vomiting
-          <% elsif params[:digestion3]=="constipation" %>
-          constipated
-          <% elsif params[:digestion4]=="diarrhea" %>
-          diarrhea
-          <% elsif params[:digestion5]=="gaseous" %>
-          gassy
-          <% else %>
+          <% problems.push('bloated') %>
+          <% end %>
+          <% if params[:digestion2]=="nausea-vomiting" %>
+          <% problems.push("nausea and vomiting") %>
+          <% end %>
+          <% if params[:digestion3]=="constipation" %>
+          <% problems.push("constipated") %>
+          <% end %>
+          <% if params[:digestion4]=="diarrhea" %>
+          <% problems.push("diarrhea") %>
+          <% end %>
+          <% if params[:digestion5]=="gaseous" %>
+          <% problems.push("gassy") %>
+          <% end %>
+          <% if problems == [] %>
           no issues
+          <% else %>
+          <ul>
+            <% problems.each do |problem| %>
+              <li><%= problem %></li>
+            <% end %>
+          </ul>
           <% end %>
       </h2>
       <h2>Appetite: <%= params[:appetite] %></h2>
