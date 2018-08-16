@@ -1,8 +1,24 @@
 html {
-  
+  background-image: url("http://i66.tinypic.com/34t514x.png");
+  background-size: cover;
 }
 
 body {
   text-align: center;
-  background-image: url("http://i68.tinypic.com/345205j.png");
+}
+
+h1 {
+  color: #FFF;
+  font-family: 'Marck Script', cursive;
+  font-size: 100px;
+  letter-spacing: 5px;
+}
+
+h3, p {
+  color: #FFF;
+  font-family: 'Bad Script', cursive;
+}
+
+input[type="text"] {
+  width: 40%;
 }
