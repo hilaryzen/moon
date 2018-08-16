@@ -11,6 +11,21 @@
       <h2>Flow: <%= params[:flow] %></h2>
       <h2>Cramp level: <%= params[:cramps] %></h2>
       <h2>Skin: <%= params[:skin] %></h2>
+      <h2>Digestion: 
+          <% if params[:digestion1]=="bloating" %>
+          bloated
+          <% elsif params[:digestion2]=="nausea-vomiting" %>
+          nausea and vomiting
+          <% elsif params[:digestion3]=="constipation" %>
+          constipated
+          <% elsif params[:digestion4]=="diarrhea" %>
+          diarrhea
+          <% elsif params[:digestion5]=="gaseous" %>
+          gassy
+          <% else %>
+          no issues
+          <% end %>
+      </h2>
       <h2>Appetite: <%= params[:appetite] %></h2>
       <h2>Craving: 
           <% if params[:craving1]=="sweet" %>
