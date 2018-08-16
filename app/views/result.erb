@@ -6,7 +6,7 @@
     <link href="css/result.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <h1>Thanks for finishing the survey! Here are your results!</h1>
+    <h1>Thanks for completing the form! Here are is your report for this month:</h1>
     <div id="status">
       <h2>Flow: <%= params[:flow] %></h2>
       <h2>Cramp level: <%= params[:cramps] %></h2>
@@ -32,6 +32,10 @@
           <% end %>
       </h2>
     </div>
+    
+    <div> <h1> And here are some solutions! </h1>
+      
+   <p> Please note that we are not trained professionals and do not guarantee all of these tips and suggestions will work for you, but have provided as many options as possible for you to try. Please follow them at your own discretion. </p> </div>
     <h2>Flow</h2>
     <% flow_advice = {
       'spotty' => "If your period recently became spotty, there may be many reasons. Medication and low body weight can affect it and make it more irregular or spotty. Too little or too much progesterone, one of the hormones that your body produces, will also have the same effect. Talk to your doctor to see if this is a potential problem.", 
@@ -93,7 +97,7 @@
     <h2>Skin</h2>
     <% skin_advice = {
       'oily' => 'advice for oily', 
-      'dry' => 'advice for dry', 
+      'dry' => 'Make sure to hydrate your skin when feeling dry (can use a serum, essence, toner, or moisturizer). Use a mild cleanser, and avoid products with alcohol, as they tend to dry out the skin further.', 
       'normal' => 'advice for normal'
     } %>
     <h3>For <%= params[:skin].capitalize %> Skin</h3>
@@ -101,31 +105,19 @@
     
     <h3>Acne</h3>
     <% acne_advice = {
-      'u-zone' => 'advice for u-zone',
-      't-zone' => "advice for t-zone",
-      'chest-arms' => "advice for chest-arms",
-      'back' => "advice for back"
+      'face' => 'Use chemical exfoliants, especially products containing BHA/AHA or glycolic acid. Use more products with Vitamin A derivatives, like retinol, and salicylic acid to prevent your pores from being clogged.',
+      'body' => "Use a gentle exfoliating scrub with ingredients like salicylic acid or tea tree oil to get rid of dead skin and bacteria."
     } %>
     <% checked = false %>
-    <% if params[:acne1] == 'u-zone' %>
+    <% if params[:acne1] == 'face' %>
     <% checked = true %>
-    <h3>Acne in Your U-Zone?</h3>
-    <div><p><%= acne_advice['u-zone'] %></p></div>
+    <h3>Acne on Your Face?</h3>
+    <div><p><%= acne_advice['face'] %></p></div>
     <% end %>
-    <% if params[:acne2] == 't-zone' %>
+    <% if params[:acne2] == 'body' %>
     <% checked = true %>
-    <h3>Acne in Your T-Zone?</h3>
-    <div><p><%= acne_advice['t-zone'] %></p></div>
-    <% end %>
-    <% if params[:acne3] == 'chest-arms' %>
-    <% checked = true %>
-    <h3>Acne on Your Chest or Arms?</h3>
-    <div><p><%= acne_advice['chest-arms'] %></p></div>
-    <% end %>
-    <% if params[:acne4] == 'back' %>
-    <% checked = true %>
-    <h3>Acne on Your Back?</h3>
-    <div><p><%= acne_advice['back'] %></p></div>
+    <h3>Acne on Your Body?</h3>
+    <div><p><%= acne_advice['body'] %></p></div>
     <% end %>
     <% if checked == false %>
     <div><p>Your skin is totally clear!</p></div>
