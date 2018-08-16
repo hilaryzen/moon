@@ -66,9 +66,42 @@
     <% end %>
     
     <h2>Skin</h2>
-    <% skin_advice = {'oily' => 'advice for oily', 'dry' => 'advice for dry', 'normal' => 'advice for normal'} %>
+    <% skin_advice = {
+      'oily' => 'advice for oily', 
+      'dry' => 'advice for dry', 
+      'normal' => 'advice for normal'
+    } %>
     <h3>For <%= params[:skin].capitalize %> Skin</h3>
     <div><p><%= skin_advice[params[:skin]] %></p></div>
+    
+    <h3>Acne</h3>
+    <% ance_advice = {
+      'u-zone' => 'advice for u-zone',
+      't-zone' => "advice for t-zone",
+      'chest-arms' => "advice for chest-arms"
+      'back' => "advice for back"
+    }
+    <% checked = false %>
+    <% if params[:acne1] == 'u-zone' %>
+    <% checked = true %>
+    <h3>Acne in Your U-Zone?</h3>
+    <div><p><%= acne_advice['u-zone'] %></p></div>
+    <% end %>
+    <% if params[:acne2] == 't-zone' %>
+    <% checked = true %>
+    <h3>Acne in Your T-Zone?</h3>
+    <div><p><%= acne_advice['t-zone'] %></p></div>
+    <% end %>
+    <% if params[:acne3] == 'chest-arms' %>
+    <% checked = true %>
+    <h3>Acne on Your Chest or Arms?</h3>
+    <div><p><%= acne_advice['chest-arms'] %></p></div>
+    <% end %>
+    <% if params[:acne4] == 'back' %>
+    <% checked = true %>
+    <h3>Acne on Your Back?</h3>
+    <div><p><%= acne_advice['back'] %></p></div>
+    <% end %>
     
     <h2>Digestion</h2>
     <% digestion_advice = {
@@ -111,8 +144,7 @@
     <% appetite_advice = {
       'poor' => 'advice for poor', 
       'good' => 'advice for good', 
-      'increased' => 'advice for increased', 
-      'insatiable' => 'advice for insatiable'
+      'increased' => 'Don’t feel angry or insecure, this is totally normal, since your body needs a lot of extra energy during this time! Eat complex carbs and foods with a lot of essential fatty acids to stay full longer. Avoid processed sugar, salt, and fat. You can also eat smaller meals throughout the day to keep your blood sugar steady. Getting exercise and taking supplements, like a multivitamin, will also help you beat food cravings!'
     } %>
     <h3>For Your <%= params[:appetite].capitalize %> Appetite</h3>
     <div><p><%= appetite_advice[params[:appetite]] %></p></div>
