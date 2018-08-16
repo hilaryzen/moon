@@ -21,11 +21,17 @@ p {
   letter-spacing: 3px;
 }
 
-div, div input {
+div {
   color: #FFF;
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 3px;
   margin: auto;
   text-align: left;
-  width: 100px;
+  width: 200px;
+}
+
+#long_checkbox {
+  width: 270px;
 }
 
 select {
@@ -33,5 +39,5 @@ select {
 }
 
 input[type="checkbox"] {
-  color: #FFF;
+  margin-right: 7px;
 }

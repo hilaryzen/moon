@@ -44,6 +44,32 @@
     <% skin_advice = {'oily' => 'advice for oily', 'dry' => 'advice for dry', 'normal' => 'advice for normal'} %>
     <h3>For <%= params[:skin].capitalize %> Skin</h3>
     <p><%= skin_advice[params[:skin]] %></p>
-
+    
+    <h2>Digestion</h2>
+    <% digestion_advice = {'bloating' => 'advice for bloating', 'nausea-vomiting' => 'advice for nausea-vomiting', 'constipation' => 'advice for constipation', 'diarrhea' => 'advice for diarrhea', 'gaseous' => 'advice for gaseous'} %>
+    <% checked = false %>
+    <% if params[:digestion1] == 'bloating' %>
+    <% checked = true %>
+    <h3>For Bloating</h3>
+    <p><%= digestion_advice['bloating'] %></p>
+    <% end %>
+    <% if params[:digestion2] == 'nausea-vomiting' %>
+    <% checked = true %>
+    <h3>For Nausea Or Vomiting</h3>
+    <p><%= digestion_advice['nausea-vomiting'] %></p>
+    <% end %>
+    <% if params[:digestion3] == 'constipation' %>
+    <% checked = true %>
+    <h3>For Constipation</h3>
+    <p><%= digestion_advice['constipation'] %></p>
+    <% end %>
+    <% if params[:digestion4] == 'diarrhea' %>
+    <% checked = true %>
+    <h3>For Diarrhea</h3>
+    <p><%= digestion_advice['diarrhea'] %></p>
+    <% end %>
+    <% if checked == false %>
+    <p>You have no problems!</p>
+    <% end %>
   </body>
 </html>
