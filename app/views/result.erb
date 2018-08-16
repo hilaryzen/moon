@@ -4,6 +4,9 @@
     <title>Moon Magic</title>
   </head>
   <body>
-    
+    <h1>Thanks for finishing the survey! Here are your results!</h1>
+    <h2>Flow</h2>
+    <% flow_advice = {'spotty' => 'advice for spotty','light' => 'advice for light', 'medium' => 'advice for medium', 'heavy' => 'advice for heavy', 'flood-warning' => 'advice for flood warning'} %>
+    <p><%= flow_advice[params[:flow]] %></p>
   </body>
 </html>
