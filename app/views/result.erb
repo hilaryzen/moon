@@ -10,7 +10,45 @@
     <div id="status">
       <h2>Flow: <%= params[:flow] %></h2>
       <h2>Cramp level: <%= params[:cramps] %></h2>
+      <h2>Physical Maladies:
+          <% physical_problems = [] %>
+          <% if params[:physical1]=="headache" %>
+          <% physical_problems.push('headache') %>
+          <% end %>
+          <% if params[:physical2]=="fatigue" %>
+          <% physical_problems.push("fatigue") %>
+          <% end %>
+          <% if params[:physical3]=="tender-breasts" %>
+          <% physical_problems.push("tender breasts") %>
+          <% end %>
+          <% if params[:physical4]=="muscle-aches" %>
+          <% physical_problems.push("muscle aches") %>
+          <% end %>
+          <% if physical_problems == [] %>
+          no issues
+          <% else %>
+          <% physical_problems.each do |problem| %>
+            <h2 style="margin-top: -23px"><%= problem %></h2>
+          <% end %>
+          <% end %>
+      </h2>
       <h2>Skin: <%= params[:skin] %></h2>
+      <h2>Acne:
+        <% acne_problems = [] %>
+        <% if params[:acne1]=="face" %>
+        <% acne_problems.push('face') %>
+        <% end %>
+        <% if params[:acne2]=="body" %>
+        <% acne_problems.push('body') %>
+        <% end %>
+        <% if acne_problems == [] %>
+          no issues
+        <% else %>
+        <% acne_problems.each do |problem| %>
+          <h2 style="margin-top: -23px"><%= problem %></h2>
+        <% end %>
+        <% end %>
+      </h2>
       <h2>Digestion: 
           <% digestion_problems = [] %>
           <% if params[:digestion1]=="bloating" %>
