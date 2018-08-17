@@ -18,4 +18,8 @@ class ApplicationController < Sinatra::Base
   post '/result' do
     return erb :result
   end
+  
+  post '/info' do
+    return erb: info
+  end
 end
