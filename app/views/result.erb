@@ -173,7 +173,7 @@
     <% skin_advice = {
       'oily' => 'advice for oily', 
       'dry' => 'Make sure to hydrate your skin when feeling dry (can use a serum, essence, toner, or moisturizer). Use a mild cleanser, and avoid products with alcohol, as they tend to dry out the skin further.', 
-      'normal' => 'advice for normal'
+      'normal' => "Keep on taking care of your skin and you'll look great!"
     } %>
     <h3>For <%= params[:skin].capitalize %> Skin</h3>
     <div><p><%= skin_advice[params[:skin]] %></p></div>
@@ -200,11 +200,11 @@
     
     <h2>Digestion</h2>
     <% digestion_advice = {
-      'bloating' => 'advice for bloating', 
+      'bloating' => 'Nothing’s worse than feeling like a 3-month pregnant lady with a fetus that grew in 20 minutes. According to Medical News Today, avoiding salt and refined carbohydrates improves bloating. Instead, eat foods rich in potassium, like spinach and bananas, or foods that are natural diuretics, like pineapples, cucumbers, and ginger.', 
       'nausea-vomiting' => "There is nothing worse than trying to stomach a painkiller to treat those intense cramps, but those pills won’t work if your lunch is threatening to make a reappearance. Trust us, Luna knows. It’s not much better when your stomach is in a state of unease the entire day, but be selective with you eat to put your squabbly stomach to rest.\nEat small meals to limit the feeling of needing to vomit, but make sure that you keep your blood sugar steady to avoid any lightheadedness. Stick to bland foods (like the BRAT diet!) if you know your stomach gets overwhelmed by strong flavors and tastes on your period.Try to shake off any nausea with plenty of fresh air and moderate exercise for 30 minutes.\nWhat’s the tea, sis? Steeping ginger, chamomile, and peppermint can seriously calm a stomach that won’t take anything else. And if the tea today ISN’T good, aromatherapy is another way to intake these herbs through smell. Mixing these essential oils in a diffuser could help with both migraines and nausea.\nVitamins to the rescue: try Vitamin B-6. Healthline also includes that a study shows that B-6 combat nausea and vomiting, as doctors ‘suggest taking between 50 and 100 milligrams of vitamin B-6 daily.’\nLuna loves: ginger! Whether it be ginger in root, candy, or ale form, healthline reports that the herb has been studied to settle upset stomachs.", 
-      'constipation' => 'advice for constipation', 
-      'diarrhea' => 'advice for diarrhea', 
-      'gaseous' => 'advice for gaseous'
+      'constipation' => 'So you’re feeling a little stuck. A buildup of progesterone can cause constipation and even constipation cramps. To ease the jammed pipes, load up on the vegetables, leafy greens in particular. Fruits to help you go are apricots, blueberries, figs, grapes, kiwi, papaya. Gentle medications like stool softeners could also help.', 
+      'diarrhea' => "The prostaglandins are at it again!\nSometimes a stream of brown escapes us. It’s okay. If diarrhea is a large problem for you, you can take medication like Imodium or Kaopectate before your period; however, make sure to check with your doctor first. Luna suggests drinking lots of fluids to stay hydrated and consuming extra fiber to solidify your stool.", 
+      'gaseous' => 'It’s totally normal to have more gas during your period! Try to avoid foods that normally give you gas, and if you really want to, you can take over-the-counter medication.'
     } %>
     <% checked = false %>
     <% if params[:digestion1] == 'bloating' %>
@@ -237,8 +237,8 @@
     <% end %>
     
     <% appetite_advice = {
-      'poor' => 'advice for poor', 
-      'good' => 'advice for good', 
+      'poor' => 'You haven’t eaten breakfast, but you still don’t want your lunch. Sometimes, we can’t even get ourselves to eat our favorite foods. It just happens. This may be because of other symptoms you have during your period, such as bloating and constipation. Luna says that sometimes she can’t even tell if she has hunger pangs or if she just has cramps! Drinking water and partaking in a non-greasy diet may help with your appetite, but if it doesn’t work, Luna suggests looking at solutions for other symptoms, since they could be the culprit!', 
+      'good' => 'Congratulations, you don’t face the same problem that many women do during their period. Consider yourself lucky, and treat yourself to your favorite foods during your period!', 
       'increased' => 'Don’t feel angry or insecure, this is totally normal, since your body needs a lot of extra energy during this time! Eat complex carbs and foods with a lot of essential fatty acids to stay full longer. Avoid processed sugar, salt, and fat. You can also eat smaller meals throughout the day to keep your blood sugar steady. Getting exercise and taking supplements, like a multivitamin, will also help you beat food cravings!'
     } %>
     <h3>For Your <%= params[:appetite].capitalize %> Appetite</h3>
@@ -247,12 +247,12 @@
     <h3>For Cravings</h3>
     <% cravings_advice = {
       'sweets' => 'Have you ever stared at your hands in horror after raiding all the chocolate in the house? No? Maybe? During your period, the body has lower levels of serotonin, the chemical in your brain which makes you feel happy. As a result, many women crave sweets and carbs during their period. Luna says, if you’re craving them, go ahead! Have them in moderation and don’t resent yourself, because it’s totally normal.', 
-      'mild-sweet' => 'advice for mild-sweet', 
-      'salty' => 'advice for salty', 
-      'mild-salty' => 'advice for mild-salty', 
-      'dairy' => 'advice for dairy', 
-      'meat' => 'advice for meat', 
-      'veggies-fruits' => 'Eat all you want, girl!'
+      'mild-sweet' => 'During your period, the body has lower levels of serotonin, the chemical in your brain which makes you feel happy. As a result, many women crave sweets and carbs during their period. Luna says, you can choose healthier choices like dates or cinnamon and yogurt, but go ahead and treat yourself once in a while!', 
+      'salty' => 'You’re craving super salty? Find yourself wanting some potato chips or pretzels? If you’re looking for healthier options, sea salt, water-rich vegetables, and vegetables from the sea are a great choice. They contain many minerals that the body needs. Luna suggests drinking more water if you’re craving salty foods: if you’re dehydrated, the kidney needs more salt to retain fluid, and if you eat salty foods, you become dehydrated quickly! It’s a vicious cycle.', 
+      'mild-salty' => 'You’re craving mildly salty? If you’re looking for healthier options, sea salt, water-rich vegetables, and vegetables from the sea are a great choice. They contain many minerals that the body needs. Luna suggests drinking more water if you’re craving salty foods: if you’re dehydrated, the kidney needs more salt to retain fluid, and if you eat salty foods, you become dehydrated quickly! It’s a vicious cycle.', 
+      'dairy' => 'Are you itching for a milkshake, ice cream, milk, or some gorgeous melted cheese? There are many reasons why your body may crave dairy. If you’re specifically craving dairy when your period is near, rather than during the entirety of the month, it may be because you’re lacking some calcium. If you’re looking for a healthier alternative, broccoli, yogurt, and almonds are some good options. Luna says that a glass of milk never hurt anyone, though (unless you’re lactose-intolerant).', 
+      'meat' => 'Sometimes you just want a big, fat, juicy steak. Or pork. I don’t know what type of meat you like. In most cases, the body craves meats such as steak which are full with iron: the body needs to replenish iron that is lost through menstruation. If you’re fatigued during your period as well, there’s a high chance that you may be anemic while on your period. This isn’t cause for concern though, since this can be fixed through diet.', 
+      'veggies-fruits' => 'Congratulations! You want to eat healthy. Luna says that if you’re lucky enough to be this unicorn, you should indulge in every single fruit and veggie that you desire.'
     } %> 
     <% checked = false %>
     <% if params[:craving1] == 'sweets' %>
@@ -291,7 +291,7 @@
     <div><p><%= cravings_advice['veggies-fruits'] %></p></div>
     <% end %>
     <% if checked == false %>
-    <div><p>You have no problems!</p></div>
+    <div><p>You have no cravings!</p></div>
     <% end %>
   </body>
 </html>
