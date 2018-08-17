@@ -20,6 +20,6 @@ class ApplicationController < Sinatra::Base
   end
   
   post '/info' do
-    return erb: info
+    return erb :info
   end
 end
