@@ -125,7 +125,24 @@
       \nVitamin to the Rescue: Vitamin A. According the Bustle, studies show that incorporating Vitamin A can decrease menstrual flow. If not the supplement itself, you can get your fill through carrots, sweet potato, squash, and pumpkin (think: orange veggies!).
       \nFor students, ever notice that periods in the summer are just more pleasant than any other time in the year? Maybe that’s just Luna, but reducing stress makes a huge difference in your cycle. Worry and tension can cause a buildup in the uterine lining, according to WebMD. Yoga, meditation, light exercise, and keeping in check with your mental health can make a real difference."
     } %>
+    <% if params[:flow] == 'heavy' %>
+    <div>
+      <p>Sometimes the start of a new cycle is so celebratory that it acts like a gift that just keeps on giving. And giving. And giving. Heavy to flood-warning periods can feel like a huge burden, but Luna’s got some ways for you that could help lighten the load. </p>
+      <p>Kind of like a one-size-fits-all hat, taking hormonal, birth control and getting an IUD could cover multiple period symptoms, regardless of whether they are being used for sexual activity or not. Talk to your doctor if these are good fits for you.</p>
+      <p>Vitamin to the Rescue: Vitamin A. According the Bustle, studies show that incorporating Vitamin A can decrease menstrual flow. If not the supplement itself, you can get your fill through carrots, sweet potato, squash, and pumpkin (think: orange veggies!).</p>
+      <p>For students, ever notice that periods in the summer are just more pleasant than any other time in the year? Maybe that’s just Luna, but reducing stress makes a huge difference in your cycle. Worry and tension can cause a buildup in the uterine lining, according to WebMD. Yoga, meditation, light exercise, and keeping in check with your mental health can make a real difference.</p>
+    </div>
+    <% elsif params[:flow] == 'flood-warning' %>
+    <div>
+      <p>Sometimes the start of a new cycle is so celebratory that it acts like a gift that just keeps on giving. And giving. And giving. Heavy to flood-warning periods can feel like a huge burden, but Luna’s got some ways for you that could help lighten the load. (Please note, if your flow isn’t figuratively but almost quite literally “Flood-warning,” you may need to consult a doctor immediately.)</p>
+      <p>Kind of like a one-size-fits-all hat, taking hormonal, birth control and getting an IUD could cover multiple period symptoms, regardless of whether they are being used for sexual activity or not. Talk to your doctor if these are good fits for you.</p>
+      <p>Vitamin to the Rescue: Vitamin A. According the Bustle, studies show that incorporating Vitamin A can decrease menstrual flow. If not the supplement itself, you can get your fill through carrots, sweet potato, squash, and pumpkin (think: orange veggies!).</p>
+      <p>For students, ever notice that periods in the summer are just more pleasant than any other time in the year? Maybe that’s just Luna, but reducing stress makes a huge difference in your cycle. Worry and tension can cause a buildup in the uterine lining, according to WebMD. Yoga, meditation, light exercise, and keeping in check with your mental health can make a real difference.</p>
+    </div>
+    <% else %>
     <div><p><%= flow_advice[params[:flow]] %></p></div>
+    <% end %>
+    
     
     <h2>Cramps</h2>
     <% cramps_advice = {'zero' => "You're one lucky girl!", 
@@ -135,23 +152,23 @@
     <div><p><%= cramps_advice['zero'] %></p></div>
     <% else %>
     <div>
-      <p>If there’s one thing Luna ain’t here for, it’s those darn cramps. They’re awful, debilitating, and the ACTUAL worse. They’re caused by prostaglandins, fatty acids and hormones that can cause cramps and other problems when they enter the bloodstream. They participate in the contractions of muscle and the inflammatory process, hence the intense cramps. But fret not, for we have some new, shiny weapons that you can add to your arsenal and hopefully defeat your cramps.</p>
-      <p>Kind of like a one-size-fits-all hat, taking hormonal, birth control and getting an IUD could cover multiple period symptoms, regardless of whether they are being used for sexual activity or not. Talk to your doctor if these are good fits for you.</p>
-      <p>To effectively use NSAIDs (nonsteroidal anti-inflammatory drugs) like ibuprofen and naproxen, take them before or immediately after you get your period to block the signals of pain that activated pain receptors are sending to your brain.</p>
-      <p>Exercise. This one is pretty hit or miss, because some of us sisters need to stay in that fetal position for the whole day. But jogging, pilates, kickboxing, or just generally staying in motion can lessen the brunt of the cramps. Don’t overexert yourself on your period, but working out has been proven to increase endorphins (happy hormones!) and could really make the whole process a lot more pleasant.</p>
-      <p>There are a few key foods to avoid during your period. As much as you might crave an order of large fries, put a stopper on that sodium! Excess sodium can worsen cramps, as well as caffeine consumption. Try cutting out the chips and coffee and see if it lessens the agitation. Your uterus (and more!) might just thank you.</p>
-      <p>It’s getting hot in here! So take of all your clo– actually, keep the clothes on, but throw on some more heat. Heat relaxes and soothes your constricting muscles. A heating pad applied directly to your abdomen can make a world of a difference. You can make your own with some rice and a pillowcase or even buy ones with essential oils for further relaxation (Origins sells a great one!).</p>
-      <p>Old Wives Tales Might Not Just Be Fiction After All: Chinese grandmas are known to be anti-cold anything, but try taking their advice and stay away from the ice cubes during your period. According to NDTV Health, “...the Health Practitioner and Macrobiotic Health Coach, Shilpa Arora [says] 'While you are on your period, you should avoid drinking cold water and eating cold foods as they worsen menstrual cramps. The muscles in the ovary and the vaginal walls tense up. These muscles cannot stretch further, which is why it leads to discomfort.’</p>
-      <p>If you’ve exhausted the entire list of period cramp treatments and see no signs of relief, please see your OB-GYN to make sure you don’t have a serious condition.</p>
+      <p>• If there’s one thing Luna ain’t here for, it’s those darn cramps. They’re awful, debilitating, and the ACTUAL worse. They’re caused by prostaglandins, fatty acids and hormones that can cause cramps and other problems when they enter the bloodstream. They participate in the contractions of muscle and the inflammatory process, hence the intense cramps. But fret not, for we have some new, shiny weapons that you can add to your arsenal and hopefully defeat your cramps.</p>
+      <p>• Kind of like a one-size-fits-all hat, taking hormonal, birth control and getting an IUD could cover multiple period symptoms, regardless of whether they are being used for sexual activity or not. Talk to your doctor if these are good fits for you.</p>
+      <p>• To effectively use NSAIDs (nonsteroidal anti-inflammatory drugs) like ibuprofen and naproxen, take them before or immediately after you get your period to block the signals of pain that activated pain receptors are sending to your brain.</p>
+      <p>• Exercise. This one is pretty hit or miss, because some of us sisters need to stay in that fetal position for the whole day. But jogging, pilates, kickboxing, or just generally staying in motion can lessen the brunt of the cramps. Don’t overexert yourself on your period, but working out has been proven to increase endorphins (happy hormones!) and could really make the whole process a lot more pleasant.</p>
+      <p>• There are a few key foods to avoid during your period. As much as you might crave an order of large fries, put a stopper on that sodium! Excess sodium can worsen cramps, as well as caffeine consumption. Try cutting out the chips and coffee and see if it lessens the agitation. Your uterus (and more!) might just thank you.</p>
+      <p>• It’s getting hot in here! So take of all your clo– actually, keep the clothes on, but throw on some more heat. Heat relaxes and soothes your constricting muscles. A heating pad applied directly to your abdomen can make a world of a difference. You can make your own with some rice and a pillowcase or even buy ones with essential oils for further relaxation (Origins sells a great one!).</p>
+      <p>• Old Wives Tales Might Not Just Be Fiction After All: Chinese grandmas are known to be anti-cold anything, but try taking their advice and stay away from the ice cubes during your period. According to NDTV Health, “...the Health Practitioner and Macrobiotic Health Coach, Shilpa Arora [says] 'While you are on your period, you should avoid drinking cold water and eating cold foods as they worsen menstrual cramps. The muscles in the ovary and the vaginal walls tense up. These muscles cannot stretch further, which is why it leads to discomfort.’</p>
+      <p>• If you’ve exhausted the entire list of period cramp treatments and see no signs of relief, please see your OB-GYN to make sure you don’t have a serious condition.</p>
     </div>
     <% end %>
     
     <h2>Other Physical Maladies</h2>
     <% physical_advice = {
-      'headache' => "A nasty headache or migraine during your period can make it feel like Aunt Flo has come a-knockin’ directly on your noggin. Period-induced headaches are due to hormonal fluctuations, particularly drops in estrogen and the influx of prostaglandins just before the cycle starts.Ibuprofen is a safe bet to alleviate tension, but if you’re already taking some to combat cramps, here are some other solutions: \nTemporary fixes would be applying ice to the areas of your headache or migraine. According to Health, some people use caffeine. But caffeine is tricky, because it can worsen period cramps. So pour up the coffee accordingly.", 
+      'headache' => "A nasty headache or migraine during your period can make it feel like Aunt Flo has come a-knockin’ directly on your noggin. Period-induced headaches are due to hormonal fluctuations, particularly drops in estrogen and the influx of prostaglandins just before the cycle starts.Ibuprofen is a safe bet to alleviate tension, but if you’re already taking some to combat cramps, here are some other solutions: Temporary fixes would be applying ice to the areas of your headache or migraine. According to Health, some people use caffeine. But caffeine is tricky, because it can worsen period cramps. So pour up the coffee accordingly.", 
       'fatigue' => 'You may be anemic! Check w/ doctor and see if you need to up your iron intake.', 
       'tender-breasts' => 'Lowering caffeine intake is a preventative measure for tender breasts. Try it during your next cycle!', 
-      'muscle-aches' => "At that time of the month, the back pain can make you feel like you’ve switched bodies with an eighty-year-old lady. That carried bricks on her back for eighty years. If you find you’re aching all over, take some time to treat those sore and aching muscles.\nTake a hot bath. Immerse in Epsom salts and other bath goodies to alleviate and loosen up those muscles. A community contributor on Buzzfeed also shared that using a textured, plastic massage mat can both treat back cramps and back pain. She uses a Spoonk mat in particular, and it seems like those spiky pointers really do the trick!", 
+      'muscle-aches' => "At that time of the month, the back pain can make you feel like you’ve switched bodies with an eighty-year-old lady. That carried bricks on her back for eighty years. If you find you’re aching all over, take some time to treat those sore and aching muscles.Take a hot bath. Immerse in Epsom salts and other bath goodies to alleviate and loosen up those muscles. A community contributor on Buzzfeed also shared that using a textured, plastic massage mat can both treat back cramps and back pain. She uses a Spoonk mat in particular, and it seems like those spiky pointers really do the trick!", 
     } %> 
     <% checked = false %>
     <% if params[:physical1] == 'headache' %>
@@ -162,7 +179,12 @@
     <% if params[:physical2] == 'fatigue' %>
     <% checked = true %>
     <h3>For Fatigue</h3>
-    <div><p><%= physical_advice['fatigue'] %></p></div>
+    <div>
+      <p>Periods have a tendency of making 7 hours of sleep feel like 4, and it leaves you feeling sluggish all day long. Your body is working overtime so you might feel spent even if you haven’t done anything. Fight fatigue with fuel!</p>
+      <p>Fruits like watermelon, fig, and plum are good for replenishing your sugar levels with all-natural glucose and all the right nutrients to shake off the sleepy. In addition, these fruits can help with bloating and sweet cravings.</p>
+      <p>According to The Thirty, magnesium, potassium, calcium, and vitamins A, C, B6, and E in broccoli make it right vegetable to lessen your fatigue. Look into more veggies with alike vitamins.</p>
+      <p>If all of the above didn't work for you, you may be anemic. Don't worry, many women don't know that they are anemic during their period. Check with your doctor and see if you need to up your iron intake.</p>
+    </div>
     <% end %>
     <% if params[:physical3] == 'tender-breasts' %>
     <% checked = true %>
@@ -224,7 +246,13 @@
     <% if params[:digestion2] == 'nausea-vomiting' %>
     <% checked = true %>
     <h3>For Nausea Or Vomiting</h3>
-    <div><p><%= digestion_advice['nausea-vomiting'] %></p></div>
+    <div>
+      <p>There is nothing worse than trying to stomach a painkiller to treat those intense cramps, but those pills won’t work if your lunch is threatening to make a reappearance. Trust us, Luna knows. It’s not much better when your stomach is in a state of unease the entire day, but be selective with you eat to put your squabbly stomach to rest.</p>
+      <p>Eat small meals to limit the feeling of needing to vomit, but make sure that you keep your blood sugar steady to avoid any lightheadedness. Stick to bland foods (like the BRAT diet!) if you know your stomach gets overwhelmed by strong flavors and tastes on your period.Try to shake off any nausea with plenty of fresh air and moderate exercise for 30 minutes.</p>
+      <p>What’s the tea, sis? Steeping ginger, chamomile, and peppermint can seriously calm a stomach that won’t take anything else. And if the tea today ISN’T good, aromatherapy is another way to intake these herbs through smell. Mixing these essential oils in a diffuser could help with both migraines and nausea.</p>
+      <p>Vitamins to the rescue: try Vitamin B-6. Healthline also includes that a study shows that B-6 combat nausea and vomiting, as doctors ‘suggest taking between 50 and 100 milligrams of vitamin B-6 daily.’</p>
+      <p>Luna loves: ginger! Whether it be ginger in root, candy, or ale form, healthline reports that the herb has been studied to settle upset stomachs.</p>
+    </div>
     <% end %>
     <% if params[:digestion3] == 'constipation' %>
     <% checked = true %>
