@@ -6,7 +6,7 @@
     <link href="css/result.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <h1>Thanks for completing the form! Here are is your report for this month:</h1>
+    <h1>Thanks for completing the form! Here is your report for this month:</h1>
     <div id="status">
       <h2>Flow: <%= params[:flow] %></h2>
       <h2>Cramp level: <%= params[:cramps] %></h2>
@@ -134,7 +134,16 @@
     <% if params[:cramps] == 'zero' %>
     <div><p><%= cramps_advice['zero'] %></p></div>
     <% else %>
-    <div><p><%= cramps_advice['other'] %></p></div>
+    <div>
+      <p>If there’s one thing Luna ain’t here for, it’s those darn cramps. They’re awful, debilitating, and the ACTUAL worse. They’re caused by prostaglandins, fatty acids and hormones that can cause cramps and other problems when they enter the bloodstream. They participate in the contractions of muscle and the inflammatory process, hence the intense cramps. But fret not, for we have some new, shiny weapons that you can add to your arsenal and hopefully defeat your cramps.</p>
+      <p>Kind of like a one-size-fits-all hat, taking hormonal, birth control and getting an IUD could cover multiple period symptoms, regardless of whether they are being used for sexual activity or not. Talk to your doctor if these are good fits for you.</p>
+      <p>To effectively use NSAIDs (nonsteroidal anti-inflammatory drugs) like ibuprofen and naproxen, take them before or immediately after you get your period to block the signals of pain that activated pain receptors are sending to your brain.</p>
+      <p>Exercise. This one is pretty hit or miss, because some of us sisters need to stay in that fetal position for the whole day. But jogging, pilates, kickboxing, or just generally staying in motion can lessen the brunt of the cramps. Don’t overexert yourself on your period, but working out has been proven to increase endorphins (happy hormones!) and could really make the whole process a lot more pleasant.</p>
+      <p>There are a few key foods to avoid during your period. As much as you might crave an order of large fries, put a stopper on that sodium! Excess sodium can worsen cramps, as well as caffeine consumption. Try cutting out the chips and coffee and see if it lessens the agitation. Your uterus (and more!) might just thank you.</p>
+      <p>It’s getting hot in here! So take of all your clo– actually, keep the clothes on, but throw on some more heat. Heat relaxes and soothes your constricting muscles. A heating pad applied directly to your abdomen can make a world of a difference. You can make your own with some rice and a pillowcase or even buy ones with essential oils for further relaxation (Origins sells a great one!).</p>
+      <p>Old Wives Tales Might Not Just Be Fiction After All: Chinese grandmas are known to be anti-cold anything, but try taking their advice and stay away from the ice cubes during your period. According to NDTV Health, “...the Health Practitioner and Macrobiotic Health Coach, Shilpa Arora [says] 'While you are on your period, you should avoid drinking cold water and eating cold foods as they worsen menstrual cramps. The muscles in the ovary and the vaginal walls tense up. These muscles cannot stretch further, which is why it leads to discomfort.’</p>
+      <p>If you’ve exhausted the entire list of period cramp treatments and see no signs of relief, please see your OB-GYN to make sure you don’t have a serious condition.</p>
+    </div>
     <% end %>
     
     <h2>Other Physical Maladies</h2>
