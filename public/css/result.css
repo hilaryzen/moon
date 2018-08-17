@@ -46,3 +46,17 @@ div {
 #status h2 {
   font-size: 25px;
 }
+button {
+  background: transparent;
+  color: white;
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px;
+  padding: 10px 20px;
+  margin-top: 30px;
+  border: 2px solid white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+button:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
