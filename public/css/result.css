@@ -65,10 +65,12 @@ img {
   padding: 5px;
   width: 200px;
 }
+footer {
+  margin-top: 50px;
+  padding-top: 30px;
+}
 footer p{
   color: #FFF;
   font-family: 'Raleway', Sans-Serif;
-  font-size: 8px;
-  margin-top: 50px;
-  padding-top: 30px;
+  font-size: 15px;
 }
